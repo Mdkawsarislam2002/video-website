@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom";
 import LWS_Logo from "../assets/lws.svg";
 import search from "../assets/search.svg";
 
 const Nav = () => {
   return (
     <>
-      <nav className="bg-slate-100 shadow-md">
+      <nav className="bg-slate-100 shadow-md px-4">
         <div className="max-w-7xl mx-auto px-5 lg:px-0 flex justify-between py-3">
-          <a href="/">
+          <Link to={"/"}>
             <img className="h-10" src={LWS_Logo} alt="Learn with Sumit" />
-          </a>
+          </Link>
           <div className="border border-slate-200 flex items-center bg-white h-10 px-5 rounded-lg text-sm ring-emerald-200">
             {/* search */}
             <form>
