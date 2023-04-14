@@ -1,7 +1,8 @@
-# Tauri + React
+# Learn With Sumit Redux Batch - 1,2
 
-This template should help get you started developing with Tauri and React in Vite.
+This is the repository for the Redux Batch of Learn With Sumit. This batch is a part of the React Batch. You can find the React Batch here:
 
-## Recommended IDE Setup
+#### Project Snapshot
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+  <img src="./public/home.png" >
+  <img src="./public/video.png" >
