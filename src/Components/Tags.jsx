@@ -9,7 +9,7 @@ const Tags = () => {
   useEffect(() => {
     dispatch(fetchTags());
   }, []);
-  console.log(tags);
+
   return (
     <>
       <section className="px-3">

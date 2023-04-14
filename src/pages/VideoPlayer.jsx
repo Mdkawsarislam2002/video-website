@@ -1,12 +1,21 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import VideoBody from "../Components/VideoPlayer/VideoBody";
+import { useEffect } from "react";
+import fetchSingleVideos from "../Redux/features/SingleVideo/singVideoAPI";
 
 const VideoPlayer = () => {
-  const location = useLocation();
+  const video = useSelector((state) => state?.singVideo?.videos);
+  const disPatch = useDispatch();
+  const { videoID } = useParams();
+
+  useEffect(() => {
+    disPatch(fetchSingleVideos(videoID));
+  }, []);
 
   return (
     <div>
-      <VideoBody video={location?.state} />
+      <VideoBody video={video} />
     </div>
   );
 };
