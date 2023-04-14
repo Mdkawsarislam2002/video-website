@@ -2,7 +2,7 @@ import React from "react";
 import SingleRelatedVideo from "./SingleRelatedVideo";
 import LikeUnlikeInVideo from "./LikeUnlikeInVideo";
 
-const VideoBody = ({ video }) => {
+const VideoBody = ({ video = {} }) => {
   const {
     id,
     title,
