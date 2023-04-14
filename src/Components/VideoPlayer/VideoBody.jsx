@@ -1,6 +1,7 @@
 import React from "react";
 import SingleRelatedVideo from "./SingleRelatedVideo";
 import LikeUnlikeInVideo from "./LikeUnlikeInVideo";
+import AllRelatedVideo from "./AllRelatedVideo";
 
 const VideoBody = ({ video = {} }) => {
   const {
@@ -56,10 +57,7 @@ const VideoBody = ({ video = {} }) => {
             </div>
 
             {/* related videos */}
-            <div className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto">
-              {/* single related video */}
-              <SingleRelatedVideo />
-            </div>
+            <AllRelatedVideo currentVideoID={id} tags={tags} />
           </div>
         </div>
       </section>
