@@ -6,6 +6,7 @@ import store from "./Redux/index";
 import Home from "./pages/Home";
 import VideoPlayer from "./pages/VideoPlayer";
 import Nav from "./Components/Nav";
+import React from "react";
 
 function App() {
   return (
