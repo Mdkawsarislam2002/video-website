@@ -11,7 +11,7 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     disPatch(fetchSingleVideos(videoID));
-  }, []);
+  }, [disPatch, fetchSingleVideos,videoID]);
 
   return (
     <div>
