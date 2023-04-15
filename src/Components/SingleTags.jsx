@@ -17,6 +17,7 @@ const SingleTags = ({ title }) => {
     : "bg-blue-600 text-white px-4 py-1 rounded-full cursor-pointer";
 
   useEffect(() => {}, [styled]);
+  console.log(filteredTags);
 
   return (
     <div

@@ -13,9 +13,11 @@ const filteredSlice = createSlice({
       state.filteredTags.push(action.payload);
     },
     removeTags: (state, action) => {
-      state.filteredTags = state.filteredTags.filter(
-        (item) => item !== action.payload
-      );
+      const isExist = state.filteredTags.indexOf(action.payload);
+
+      if (isExist !== -1) {
+        state.filteredTags.splice(isExist, 1);
+      }
     },
     setSearchValue: (state, action) => {
       state.searchValue = action.payload;
