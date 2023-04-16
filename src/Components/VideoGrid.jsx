@@ -6,14 +6,17 @@ import VideoGridItems from "./VideoGridItems";
 import fetchAllVideos from "../Redux/features/HomeVideos/FetchAllVideo";
 
 const VideoGrid = () => {
+  const dispatch = useDispatch();
+  const { searchValue, filteredTags } = useSelector((state) => state.filtered);
   const { videos, loading, error, isError } = useSelector(
     (state) => state.homeVideos
   );
-  const dispatch = useDispatch();
+
+  console.log(videos);
 
   useEffect(() => {
-    dispatch(fetchAllVideos());
-  }, []);
+    dispatch(fetchAllVideos({ tags: filteredTags, searchValue: searchValue }));
+  }, [searchValue, filteredTags, dispatch]);
   let watchVideo;
 
   if (videos.length > 0 && !loading && !error) {
