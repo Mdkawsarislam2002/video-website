@@ -12,8 +12,6 @@ const VideoGrid = () => {
     (state) => state.homeVideos
   );
 
-  console.log(videos);
-
   useEffect(() => {
     dispatch(fetchAllVideos({ tags: filteredTags, searchValue: searchValue }));
   }, [searchValue, filteredTags, dispatch]);

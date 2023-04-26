@@ -38,7 +38,7 @@ const VideoGridItems = ({ video }) => {
         <div className="flex flex-row mt-2 gap-2">
           <a href="#" className="shrink-0">
             <img
-              src="https://avatars.githubusercontent.com/u/73503432?v=4"
+              src={avatar}
               className="rounded-full h-6 w-6"
               alt="Learn with Sumit"
             />
