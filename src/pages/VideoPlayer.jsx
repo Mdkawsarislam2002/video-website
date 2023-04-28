@@ -1,7 +1,7 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import VideoBody from "../Components/VideoPlayer/VideoBody";
-import { useEffect } from "react";
 import fetchSingleVideos from "../Redux/features/SingleVideo/singVideoAPI";
 
 const VideoPlayer = () => {
@@ -11,8 +11,9 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     disPatch(fetchSingleVideos(videoID));
-  }, [disPatch, fetchSingleVideos,videoID]);
+  }, [disPatch, videoID]);
 
+  console.log(video);
   return (
     <div>
       <VideoBody video={video} />

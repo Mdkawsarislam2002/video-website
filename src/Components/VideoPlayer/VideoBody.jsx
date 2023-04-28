@@ -1,5 +1,5 @@
-import React from "react";
-import SingleRelatedVideo from "./SingleRelatedVideo";
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import LikeUnlikeInVideo from "./LikeUnlikeInVideo";
 import AllRelatedVideo from "./AllRelatedVideo";
 
@@ -19,6 +19,7 @@ const VideoBody = ({ video = {} }) => {
     likes,
     unlikes,
   } = video;
+  console.log(video);
 
   return (
     <>
@@ -47,7 +48,7 @@ const VideoBody = ({ video = {} }) => {
                   </h2>
 
                   {/* like/unlike */}
-                  <LikeUnlikeInVideo likes={likes} unlikes={unlikes} />
+                  <LikeUnlikeInVideo id={id} likes={likes} unlikes={unlikes} />
                 </div>
 
                 <div className="mt-4 text-sm text-[#334155] dark:text-slate-400">

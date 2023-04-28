@@ -1,22 +1,8 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 const VideoGridItems = ({ video }) => {
-  const {
-    id,
-    title,
-    description,
-    author,
-    avatar,
-    date,
-    duration,
-    views,
-    link,
-    thumbnail,
-    tags,
-    likes,
-    unlikes,
-  } = video;
+  const { id, title, author, avatar, date, duration, views, thumbnail } = video;
 
   return (
     <div className="col-span-12 sm:col-span-6 md:col-span-3 duration-300 hover:scale-[1.03]">
@@ -31,7 +17,7 @@ const VideoGridItems = ({ video }) => {
           </Link>
 
           <p className="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py">
-            12:10
+            {duration}
           </p>
         </div>
 
@@ -44,17 +30,17 @@ const VideoGridItems = ({ video }) => {
             />
           </a>
 
-          <div clas="flex flex-col">
-            <a href="video.html">
-              <p className="text-slate-900 text-sm font-semibold">{title}</p>
-            </a>
+          <div className="flex flex-col">
+            <p className="text-slate-900 text-sm font-semibold">{title}</p>
             <a
               className="text-gray-400 text-xs mt-2 hover:text-gray-600"
               href="#"
             >
               {author}
             </a>
-            <p className="text-gray-400 text-xs mt-1">200 views .{date}</p>
+            <p className="text-gray-400 text-xs mt-1">
+              {views} views .{date}
+            </p>
           </div>
         </div>
       </div>

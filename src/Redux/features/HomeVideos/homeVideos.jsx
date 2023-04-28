@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import fetchAllVideos from "./FetchAllVideo";
+import fetchAllVideos, { updateReaction } from "./FetchAllVideo";
 
 const initialState = {
   videos: [],
@@ -13,7 +13,7 @@ const homeVideosSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllVideos.pending, (state, action) => {
+      .addCase(fetchAllVideos.pending, (state) => {
         state.isError = false;
         state.error = "";
         state.loading = true;
@@ -26,6 +26,18 @@ const homeVideosSlice = createSlice({
         state.isError = true;
         state.error = action.error.message;
         state.loading = false;
+      });
+    // update react
+    builder
+      .addCase(updateReaction.pending, (state) => {
+        return state;
+      })
+      .addCase(updateReaction.fulfilled, (state, action) => {
+        state.videos.likes = action.payload.likes;
+        state.videos.unlikes = action.payload.unlikes;
+      })
+      .addCase(updateReaction.rejected, (state) => {
+        return state;
       });
   },
 });

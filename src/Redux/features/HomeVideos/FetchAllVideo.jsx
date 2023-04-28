@@ -17,4 +17,25 @@ const fetchAllVideos = createAsyncThunk(
   }
 );
 
+export const updateReaction = createAsyncThunk(
+  "homeVideos/updateReaction",
+  async ({ id, reaction }) => {
+    const { data } = await videoAxios.get(`/videos/${id}`);
+
+    if (data) {
+      let updatedReaction =
+        reaction === "like"
+          ? {
+              likes: data.likes + 1,
+            }
+          : {
+              unlikes: data.unlikes + 1,
+            };
+
+      const response = await videoAxios.patch(`/videos/${id}`, updatedReaction);
+      return response.data;
+    }
+  }
+);
+
 export default fetchAllVideos;

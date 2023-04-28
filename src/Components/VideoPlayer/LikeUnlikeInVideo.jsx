@@ -1,10 +1,22 @@
+/* eslint-disable react/prop-types */
+import { useDispatch } from "react-redux";
+import { updateReaction } from "../../Redux/features/HomeVideos/FetchAllVideo";
+
+// icons
 import like from "../../assets/like.svg";
 import unlike from "../../assets/unlike.svg";
 
-const LikeUnlikeInVideo = ({ likes, unlikes }) => {
+const LikeUnlikeInVideo = ({ likes, unlikes, id }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="flex gap-10 w-48">
-      <div className="flex gap-1">
+      <div
+        className="flex gap-1 cursor-pointer"
+        onClick={() => {
+          dispatch(updateReaction({ id, reaction: "like" }));
+        }}
+      >
         <div className="shrink-0">
           <img className="w-5 block" src={like} alt="Like" />
         </div>
@@ -12,7 +24,13 @@ const LikeUnlikeInVideo = ({ likes, unlikes }) => {
           {likes}
         </div>
       </div>
-      <div className="flex gap-1">
+      {/* unlike  */}
+      <div
+        className="flex gap-1 cursor-pointer"
+        onClick={() => {
+          dispatch(updateReaction({ id, reaction: "unlike" }));
+        }}
+      >
         <div className="shrink-0">
           <img className="w-5 block" src={unlike} alt="Unlike" />
         </div>
